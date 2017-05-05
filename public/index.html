@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>URL Shortener</title>
+		<title>File Metadata</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -14,7 +14,7 @@
 <style>
 
 body{
-  margin-left: 20px;
+  margin: 20px;
 }
 
 input{
@@ -24,38 +24,12 @@ input{
 </style>
 <body>
 
-<div class = 'row text-center'>
-<h1>URL Shortener Microservice</h1>
-URL <input id='urlInput'></input>
-<button id='urlButton'>Shorten</button>
-<div id ='urlOut'></div>
-</div>
+<h2>Submit a file to view its filesize.</h2>
+<form action="/get-file-data" method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input type="submit">
+</form>
 
-<br><br>
-<h2>API Usage</h2>
-<p>
-I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
-<br>
-When I visit that shortened URL, it will redirect me to my original link.
-<br><br>
-Example creation usage:
-<br>
-https://urle.herokuapp.com/new/https://www.google.com
-<br>
-https://urle.herokuapp.com/new/http://foo.com:80
-<br><br>
-Example creation output
-<br>
-{ "original_url":"https://www.google.com", "short_url":"https://urle.herokuapp.com/1" }
-<br><br>
-Usage:
-<br>
-https://urle.herokuapp.com/1
-<br>
-Will redirect to:
-<br>
-https://www.google.com/
-</p>
 
 <br><br>
 </body>
